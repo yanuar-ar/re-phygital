@@ -1,6 +1,5 @@
 require('dotenv').config();
 require('@nomicfoundation/hardhat-toolbox');
-require('@openzeppelin/hardhat-upgrades');
 require('hardhat-abi-exporter');
 require('@nomiclabs/hardhat-etherscan');
 require('solidity-coverage');

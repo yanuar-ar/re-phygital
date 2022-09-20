@@ -55,7 +55,7 @@ contract Phygital is ERC1155, Ownable, ERC1155Supply {
 
     function mint(uint256 id, uint256 quantity) public payable returns (uint256) {
         // check active
-        require(mintPhase[id].active == false, 'Mint not active');
+        require(mintPhase[id].active == true, 'Mint not active');
 
         // check endTime minting
         require(block.timestamp < mintPhase[id].endTime, 'Minting expired');
@@ -78,7 +78,7 @@ contract Phygital is ERC1155, Ownable, ERC1155Supply {
 
     function burn(uint256 id, uint256 quantity) public virtual {
         // check active
-        require(burnPhase[id].active == false, 'Burn not active');
+        require(burnPhase[id].active == true, 'Burn not active');
 
         // check endTime burn
         require(block.timestamp < burnPhase[id].endTime, 'Burn expired');
@@ -141,7 +141,7 @@ contract Phygital is ERC1155, Ownable, ERC1155Supply {
         bool active
     ) external onlyOwner {
         require(exists(id), 'Token does not exists !');
-        burnPhase[_currentId] = Burn({ startTime: startTime, endTime: endTime, active: active });
+        burnPhase[id] = Burn({ startTime: startTime, endTime: endTime, active: active });
     }
 
     function updateBurnPhase(
