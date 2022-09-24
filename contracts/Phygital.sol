@@ -99,8 +99,7 @@ contract Phygital is ERC1155, Ownable, ERC1155Supply {
         uint256 price,
         bool active
     ) external onlyOwner {
-        _currentId++;
-        mintPhase[_currentId] = Mint({
+        mintPhase[_currentId++] = Mint({
             maxPerWallet: maxPerWallet,
             maxSupply: maxSupply,
             startTime: startTime,
