@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const { ethers } = require('hardhat');
 
-describe('NOMO NOUNS Testing', async () => {
+describe('re:phygital Testing', async () => {
   let phygital;
 
   before(async () => {
